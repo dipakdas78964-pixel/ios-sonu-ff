@@ -23,7 +23,7 @@ TOKEN = "7827262957:AAGp8QwlaGYM98fJJ3gFaOi5P76FUgxKdEg"
 
 ADMIN_ID = 5585434832
 
-REGISTER_LINK = "PASTE_VERIFY_LINK"
+REGISTER_LINK = "https://ios-sonu-ff.onrender.com"
 
 DB_FILE = "database.json"
 
