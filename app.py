@@ -19,114 +19,178 @@ HTML = """
 
 <!DOCTYPE html>
 <html>
-
 <head>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IOS SONU FF VIP PROXY</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
 
-body{
+*{
 margin:0;
 padding:0;
-font-family:Arial;
-background:black;
-color:white;
-background-image:url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80https://i.postimg.cc/W1bJ8r9t/wp9764093.jpgw=1200https://i.postimg.cc/W1bJ8r9t/wp9764093.jpgauto=formathttps://i.postimg.cc/W1bJ8r9t/wp9764093.jpgfit=crop');
+box-sizing:border-box;
+font-family:'Orbitron',sans-serif;
+}
+
+body{
+background:url('https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1200&auto=format&fit=crop') no-repeat center center fixed;
 background-size:cover;
-background-position:center;
+min-height:100vh;
+overflow:hidden;
+color:white;
+}
+
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.72);
+backdrop-filter:blur(4px);
+}
+
+.particles{
+position:absolute;
+width:100%;
+height:100%;
 overflow:hidden;
 }
 
-.overlay{
-background:rgba(0,0,0,0.85);
+.particles span{
+position:absolute;
+display:block;
+width:4px;
+height:4px;
+background:#ffd700;
+border-radius:50%;
+animation:animate 15s linear infinite;
+}
+
+@keyframes animate{
+0%{
+transform:translateY(100vh) scale(0);
+opacity:0;
+}
+50%{
+opacity:1;
+}
+100%{
+transform:translateY(-10vh) scale(1);
+opacity:0;
+}
+}
+
+.container{
+position:relative;
+z-index:10;
+display:flex;
+justify-content:center;
+align-items:center;
 min-height:100vh;
 padding:20px;
 }
 
-.box{
-max-width:500px;
-margin:auto;
-margin-top:40px;
-background:rgba(10,10,10,0.95);
-border:2px solid gold;
-border-radius:25px;
-padding:25px;
-box-shadow:0 0 40px gold;
-animation: glow 2s infinite alternate;
+.card{
+width:100%;
+max-width:430px;
+background:rgba(0,0,0,0.55);
+border:2px solid rgba(255,215,0,0.4);
+border-radius:30px;
+padding:30px;
+backdrop-filter:blur(15px);
+box-shadow:0 0 50px rgba(255,215,0,0.4);
+animation:glow 2s infinite alternate;
 }
 
 @keyframes glow{
 from{
-box-shadow:0 0 20px gold;
+box-shadow:0 0 20px rgba(255,215,0,0.3);
 }
+
 to{
-box-shadow:0 0 50px orange;
+box-shadow:0 0 60px rgba(255,215,0,0.8);
 }
 }
 
 .logo{
-width:230px;
+width:140px;
 display:block;
 margin:auto;
+margin-bottom:15px;
+filter:drop-shadow(0 0 15px gold);
+}
+
+.title{
+text-align:center;
+font-size:32px;
+color:#ffd700;
+margin-bottom:10px;
+text-shadow:0 0 15px gold;
+}
+
+.sub{
+text-align:center;
+color:#ccc;
+font-size:13px;
 margin-bottom:20px;
 }
 
-h1{
+.live{
 text-align:center;
-color:gold;
-font-size:34px;
+padding:12px;
+border-radius:15px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,215,0,0.3);
+margin-bottom:15px;
 }
 
-p{
+.clock{
 text-align:center;
-color:#ccc;
-}
-
-.ip{
-background:#111;
-padding:14px;
-border-radius:14px;
-margin-top:15px;
-text-align:center;
-border:1px solid gold;
+margin-bottom:15px;
+color:#00ffcc;
+font-size:14px;
 }
 
 input{
 width:100%;
-padding:15px;
-margin-top:20px;
+padding:16px;
 border:none;
-border-radius:12px;
-background:#1c1c1c;
+border-radius:15px;
+background:rgba(255,255,255,0.08);
+margin-top:15px;
 color:white;
-font-size:16px;
+font-size:15px;
+outline:none;
+border:1px solid rgba(255,255,255,0.08);
 }
 
 button{
 width:100%;
-padding:15px;
-margin-top:18px;
+padding:16px;
 border:none;
-border-radius:12px;
-background:gold;
-font-size:18px;
+border-radius:15px;
+margin-top:18px;
+background:linear-gradient(45deg,#ffd700,#ff9900);
+font-size:17px;
 font-weight:bold;
+color:black;
 cursor:pointer;
 transition:0.3s;
 }
 
 button:hover{
-background:white;
 transform:scale(1.03);
+box-shadow:0 0 20px gold;
 }
 
 .result{
 margin-top:20px;
-background:#111;
-padding:20px;
+padding:18px;
 border-radius:18px;
-border:1px solid #333;
+background:rgba(255,255,255,0.05);
+text-align:center;
 }
 
 .ok{
@@ -135,17 +199,17 @@ font-size:22px;
 }
 
 .bad{
-color:red;
+color:#ff3b3b;
 font-size:22px;
 }
 
 .btn{
 display:block;
-padding:15px;
-margin-top:15px;
-text-align:center;
-border-radius:12px;
 text-decoration:none;
+text-align:center;
+padding:14px;
+border-radius:14px;
+margin-top:14px;
 font-weight:bold;
 transition:0.3s;
 }
@@ -160,121 +224,110 @@ color:white;
 }
 
 .admin{
-background:#ff004c;
+background:#ff0055;
 color:white;
 }
 
 .footer{
-margin-top:20px;
+margin-top:18px;
 text-align:center;
-color:gray;
-font-size:14px;
+font-size:12px;
+color:#aaa;
 }
 
 </style>
-
 </head>
-
 <body>
+
+<div class="bg"></div>
+
+<div class="particles">
+<span style="left:10%;animation-delay:0s"></span>
+<span style="left:20%;animation-delay:2s"></span>
+<span style="left:30%;animation-delay:4s"></span>
+<span style="left:40%;animation-delay:6s"></span>
+<span style="left:50%;animation-delay:8s"></span>
+<span style="left:60%;animation-delay:10s"></span>
+<span style="left:70%;animation-delay:12s"></span>
+<span style="left:80%;animation-delay:14s"></span>
+<span style="left:90%;animation-delay:16s"></span>
+</div>
 
 <audio autoplay loop>
 <source src="https://files.catbox.moe/8jv5gk.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-
-window.onload = function () {
-
-let msg = new SpeechSynthesisUtterance(
-"Welcome to IOS SONU FF Proxy"
-);
-
-msg.volume = 1;
-
-msg.rate = 0.9;
-
-msg.pitch = 1;
-
+window.onload=function(){
+let msg=new SpeechSynthesisUtterance('Welcome to IOS SONU FF Proxy');
+msg.volume=1;
+msg.rate=0.9;
+msg.pitch=1;
 speechSynthesis.speak(msg);
-
 }
 
+function updateClock(){
+const now=new Date();
+document.getElementById('clock').innerHTML=now.toLocaleString();
+}
+
+setInterval(updateClock,1000);
 </script>
 
-<div class="overlay">
+<div class="container">
+<div class="card">
 
-<div class="box">
+<img class="logo" src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png">
 
-<img class="logo" src="https://i.postimg.cc/3x3QzSGq/Picsart-25-05-09-23-10-34-434.png">
+<div class="title">IOS SONU FF</div>
+<div class="sub">ULTIMATE VIP KEY ACTIVATION PROXY</div>
 
-<h1>IOS SONU FF VIP PROXY</h1>
+<div class="clock" id="clock"></div>
 
-<p>PREMIUM KEY ACTIVATION SERVER</p>
-
-<div class="ip">
-YOUR IP: {{ip}}
+<div class="live">
+🌐 YOUR NETWORK IP: {{ip}}
 </div>
 
 <form method="POST">
-
-<input type="text" name="key" placeholder="ENTER YOUR PREMIUM KEY" required>
-
-<button type="submit">
-VERIFY & ACTIVATE
-</button>
-
+<input type="text" name="key" placeholder="ENTER PREMIUM KEY" required>
+<button type="submit">VERIFY & ACTIVATE</button>
 </form>
 
 {% if status %}
-
 <div class="result">
-
-<h2 class="{{cls}}">
-{{status}}
-</h2>
-
+<h2 class="{{cls}}">{{status}}</h2>
 <p>{{msg}}</p>
-
 </div>
-
 {% endif %}
 
-<a class="btn tg" href="https://t.me/+3kZ0sxFfDZAwODM1">
-📢 JOIN TELEGRAM CHANNEL
-</a>
+<a class="btn tg" href="https://t.me/+3kZ0sxFfDZAwODM1">📢 JOIN TELEGRAM CHANNEL</a>
 
-<a class="btn admin" href="https://t.me/SONUSELLOR11">
-👤 CONTACT ADMIN
-</a>
+<a class="btn admin" href="https://t.me/SONUSELLOR11">👤 CONTACT ADMIN</a>
 
 <div class="footer">
-
-ADMIN: @SONUSELLOR11
-
+OWNER: SONU SELLOR | IOS SONU FF VIP SYSTEM
 </div>
 
 </div>
-
 </div>
 
 </body>
-
 </html>
 
 """
 
-@app.route("/", methods=["GET","POST"])
+@app.route('/', methods=['GET','POST'])
 def home():
 
-    ip = request.remote_addr
+    ip = request.headers.get('X-Forwarded-For', request.remote_addr)
 
-    status = ""
-    msg = ""
-    cls = ""
+    status = ''
+    msg = ''
+    cls = ''
 
-    if request.method == "POST":
+    if request.method == 'POST':
 
-        key = request.form.get("key")
+        key = request.form.get('key')
 
         data = load()
 
@@ -282,45 +335,36 @@ def home():
 
             info = data[key]
 
-            if info["status"] == "deleted":
+            if info['status'] == 'deleted':
 
-                status = "❌ KEY DELETED"
-                msg = "THIS KEY HAS BEEN REMOVED"
-                cls = "bad"
+                status = '❌ KEY DELETED'
+                msg = 'THIS KEY HAS BEEN REMOVED'
+                cls = 'bad'
 
             else:
 
-                exp = datetime.fromisoformat(info["expire"])
-
+                exp = datetime.fromisoformat(info['expire'])
                 now = datetime.now()
 
                 if now > exp:
 
-                    status = "⌛ KEY EXPIRED"
-                    msg = "YOUR KEY TIME IS OVER"
-                    cls = "bad"
+                    status = '⌛ KEY EXPIRED'
+                    msg = 'YOUR KEY TIME IS OVER'
+                    cls = 'bad'
 
                 else:
 
                     remain = exp - now
 
-                    status = "✅ KEY ACTIVE"
-
-                    msg = f"""
-Remaining Time:
-{remain}
-
-Expire Date:
-{exp}
-"""
-
-                    cls = "ok"
+                    status = '✅ KEY ACTIVE'
+                    msg = f'REMAINING TIME: {remain}'
+                    cls = 'ok'
 
         else:
 
-            status = "❌ INVALID KEY"
-            msg = "KEY NOT FOUND"
-            cls = "bad"
+            status = '❌ INVALID KEY'
+            msg = 'KEY NOT FOUND'
+            cls = 'bad'
 
     return render_template_string(
         HTML,
@@ -330,5 +374,5 @@ Expire Date:
         cls=cls
     )
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
