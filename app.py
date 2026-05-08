@@ -32,14 +32,14 @@ padding:0;
 font-family:Arial;
 background:black;
 color:white;
-background-image:url('https://i.imgur.com/TJ6F8Gx.jpeg');
+background-image:url('https://i.postimg.cc/W1bJ8r9t/wp9764093.jpg');
 background-size:cover;
 background-position:center;
 overflow:hidden;
 }
 
 .overlay{
-background:rgba(0,0,0,0.82);
+background:rgba(0,0,0,0.85);
 min-height:100vh;
 padding:20px;
 }
@@ -48,11 +48,11 @@ padding:20px;
 max-width:500px;
 margin:auto;
 margin-top:40px;
-background:rgba(10,10,10,0.92);
+background:rgba(10,10,10,0.95);
 border:2px solid gold;
 border-radius:25px;
 padding:25px;
-box-shadow:0 0 30px gold;
+box-shadow:0 0 40px gold;
 animation: glow 2s infinite alternate;
 }
 
@@ -61,12 +61,12 @@ from{
 box-shadow:0 0 20px gold;
 }
 to{
-box-shadow:0 0 45px orange;
+box-shadow:0 0 50px orange;
 }
 }
 
 .logo{
-width:220px;
+width:230px;
 display:block;
 margin:auto;
 margin-bottom:20px;
@@ -113,10 +113,12 @@ background:gold;
 font-size:18px;
 font-weight:bold;
 cursor:pointer;
+transition:0.3s;
 }
 
 button:hover{
 background:white;
+transform:scale(1.03);
 }
 
 .result{
@@ -145,6 +147,11 @@ text-align:center;
 border-radius:12px;
 text-decoration:none;
 font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.03);
 }
 
 .tg{
@@ -198,7 +205,7 @@ speechSynthesis.speak(msg);
 
 <div class="box">
 
-<img class="logo" src="https://i.imgur.com/y0QF6Xw.png">
+<img class="logo" src="https://i.postimg.cc/3x3QzSGq/Picsart-25-05-09-23-10-34-434.png">
 
 <h1>IOS SONU FF VIP PROXY</h1>
 
