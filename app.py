@@ -1,78 +1,117 @@
 from flask import Flask, request, render_template_string
 import json
 import os
+from datetime import datetime
 
 app = Flask(__name__)
 
-DB_FILE = "database.json"
+DB = "database.json"
 
-if not os.path.exists(DB_FILE):
-    with open(DB_FILE, "w") as f:
+if not os.path.exists(DB):
+    with open(DB, "w") as f:
         json.dump({}, f)
 
-def load_db():
-    with open(DB_FILE, "r") as f:
+def load():
+    with open(DB, "r") as f:
         return json.load(f)
 
 HTML = """
 
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <title>IOS SONU FF VIP PROXY</title>
 
 <style>
 
 body{
-background:#0d0d0d;
+margin:0;
+padding:0;
 font-family:Arial;
+background:black;
 color:white;
-text-align:center;
+background-image:url('https://i.imgur.com/TJ6F8Gx.jpeg');
+background-size:cover;
+background-position:center;
+overflow:hidden;
+}
+
+.overlay{
+background:rgba(0,0,0,0.82);
+min-height:100vh;
 padding:20px;
 }
 
 .box{
-background:#111;
-padding:25px;
-border-radius:20px;
-box-shadow:0 0 25px gold;
-max-width:420px;
+max-width:500px;
 margin:auto;
 margin-top:40px;
+background:rgba(10,10,10,0.92);
+border:2px solid gold;
+border-radius:25px;
+padding:25px;
+box-shadow:0 0 30px gold;
+animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{
+box-shadow:0 0 20px gold;
+}
+to{
+box-shadow:0 0 45px orange;
+}
 }
 
 .logo{
-width:180px;
-border-radius:20px;
+width:220px;
+display:block;
+margin:auto;
 margin-bottom:20px;
-box-shadow:0 0 25px gold;
 }
 
 h1{
+text-align:center;
 color:gold;
+font-size:34px;
+}
+
+p{
+text-align:center;
+color:#ccc;
+}
+
+.ip{
+background:#111;
+padding:14px;
+border-radius:14px;
+margin-top:15px;
+text-align:center;
+border:1px solid gold;
 }
 
 input{
-width:90%;
-padding:14px;
+width:100%;
+padding:15px;
+margin-top:20px;
 border:none;
 border-radius:12px;
-background:#222;
+background:#1c1c1c;
 color:white;
-font-size:17px;
-margin-top:15px;
+font-size:16px;
 }
 
 button{
-width:95%;
-padding:14px;
+width:100%;
+padding:15px;
+margin-top:18px;
 border:none;
 border-radius:12px;
 background:gold;
-color:black;
 font-size:18px;
 font-weight:bold;
-margin-top:15px;
 cursor:pointer;
 }
 
@@ -80,146 +119,208 @@ button:hover{
 background:white;
 }
 
-.info{
+.result{
 margin-top:20px;
-background:#1a1a1a;
+background:#111;
+padding:20px;
+border-radius:18px;
+border:1px solid #333;
+}
+
+.ok{
+color:#00ff66;
+font-size:22px;
+}
+
+.bad{
+color:red;
+font-size:22px;
+}
+
+.btn{
+display:block;
 padding:15px;
-border-radius:15px;
-}
-
-a{
+margin-top:15px;
+text-align:center;
+border-radius:12px;
 text-decoration:none;
-}
-
-.tgbtn{
-display:block;
-background:#229ED9;
-padding:14px;
-border-radius:12px;
-margin-top:15px;
-color:white;
 font-weight:bold;
 }
 
-.adminbtn{
-display:block;
+.tg{
+background:#0088cc;
+color:white;
+}
+
+.admin{
 background:#ff004c;
-padding:14px;
-border-radius:12px;
-margin-top:15px;
 color:white;
-font-weight:bold;
 }
 
 .footer{
 margin-top:20px;
+text-align:center;
 color:gray;
 font-size:14px;
 }
 
 </style>
+
 </head>
 
 <body>
 
+<audio autoplay loop>
+<source src="https://files.catbox.moe/8jv5gk.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+window.onload = function () {
+
+let msg = new SpeechSynthesisUtterance(
+"Welcome to IOS SONU FF Proxy"
+);
+
+msg.volume = 1;
+
+msg.rate = 0.9;
+
+msg.pitch = 1;
+
+speechSynthesis.speak(msg);
+
+}
+
+</script>
+
+<div class="overlay">
+
 <div class="box">
 
-<img src="https://i.imgur.com/3l4KX5Y.png" class="logo">
+<img class="logo" src="https://i.imgur.com/y0QF6Xw.png">
 
 <h1>IOS SONU FF VIP PROXY</h1>
 
-<p>WELCOME TO PREMIUM KEY REGISTRATION SERVER</p>
+<p>PREMIUM KEY ACTIVATION SERVER</p>
 
-<div class="info">
-YOUR IP:
-<b>{{ip}}</b>
+<div class="ip">
+YOUR IP: {{ip}}
 </div>
 
 <form method="POST">
 
 <input type="text" name="key" placeholder="ENTER YOUR PREMIUM KEY" required>
 
-<button type="submit">VERIFY & ACTIVATE</button>
+<button type="submit">
+VERIFY & ACTIVATE
+</button>
 
 </form>
 
 {% if status %}
 
-<div class="info">
+<div class="result">
 
-<h2>{{status}}</h2>
+<h2 class="{{cls}}">
+{{status}}
+</h2>
 
-<p>{{message}}</p>
+<p>{{msg}}</p>
 
 </div>
 
 {% endif %}
 
-<a href="https://t.me/+3kZ0sxFfDZAwODM1">
-<div class="tgbtn">
+<a class="btn tg" href="https://t.me/+3kZ0sxFfDZAwODM1">
 📢 JOIN TELEGRAM CHANNEL
-</div>
 </a>
 
-<a href="https://t.me/SONUSELLOR11">
-<div class="adminbtn">
+<a class="btn admin" href="https://t.me/SONUSELLOR11">
 👤 CONTACT ADMIN
-</div>
 </a>
 
 <div class="footer">
+
 ADMIN: @SONUSELLOR11
+
+</div>
+
 </div>
 
 </div>
 
 </body>
+
 </html>
 
 """
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/", methods=["GET","POST"])
 def home():
 
     ip = request.remote_addr
+
     status = ""
-    message = ""
+    msg = ""
+    cls = ""
 
     if request.method == "POST":
 
         key = request.form.get("key")
 
-        data = load_db()
+        data = load()
 
         if key in data:
 
-            if data[key]["status"] == "deleted":
+            info = data[key]
+
+            if info["status"] == "deleted":
 
                 status = "❌ KEY DELETED"
-                message = "THIS KEY HAS BEEN REMOVED"
+                msg = "THIS KEY HAS BEEN REMOVED"
+                cls = "bad"
 
             else:
 
-                status = "✅ KEY ACTIVE"
+                exp = datetime.fromisoformat(info["expire"])
 
-                message = f"""
-KEY SUCCESSFULLY VERIFIED
+                now = datetime.now()
 
-DAYS: {data[key]['days']}
+                if now > exp:
 
-STATUS: ACTIVE
+                    status = "⌛ KEY EXPIRED"
+                    msg = "YOUR KEY TIME IS OVER"
+                    cls = "bad"
+
+                else:
+
+                    remain = exp - now
+
+                    status = "✅ KEY ACTIVE"
+
+                    msg = f"""
+Remaining Time:
+{remain}
+
+Expire Date:
+{exp}
 """
+
+                    cls = "ok"
 
         else:
 
             status = "❌ INVALID KEY"
-            message = "KEY NOT FOUND"
+            msg = "KEY NOT FOUND"
+            cls = "bad"
 
     return render_template_string(
         HTML,
         ip=ip,
         status=status,
-        message=message
+        msg=msg,
+        cls=cls
     )
 
 if __name__ == "__main__":
