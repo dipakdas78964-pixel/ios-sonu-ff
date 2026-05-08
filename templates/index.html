@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IOS SONU FF VIP PROXY</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Orbitron',sans-serif;
+}
+
+body{
+background:url('https://i.imgur.com/zYIlgBl.jpeg');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+color:white;
+min-height:100vh;
+overflow-x:hidden;
+}
+
+.overlay{
+background:rgba(0,0,0,0.75);
+min-height:100vh;
+padding:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.box{
+width:100%;
+max-width:500px;
+background:rgba(0,0,0,0.82);
+border:2px solid gold;
+border-radius:25px;
+padding:25px;
+box-shadow:0 0 40px gold;
+backdrop-filter:blur(8px);
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{
+box-shadow:0 0 20px gold;
+}
+to{
+box-shadow:0 0 45px gold;
+}
+}
+
+.logo{
+width:100%;
+border-radius:20px;
+margin-bottom:20px;
+}
+
+.title{
+text-align:center;
+font-size:42px;
+font-weight:900;
+color:gold;
+text-shadow:0 0 20px gold;
+margin-bottom:10px;
+}
+
+.subtitle{
+text-align:center;
+color:#ddd;
+margin-bottom:25px;
+font-size:14px;
+}
+
+.ipbox{
+background:#0d0d0d;
+border:1px solid gold;
+padding:18px;
+border-radius:15px;
+margin-bottom:20px;
+text-align:center;
+font-size:15px;
+line-height:1.7;
+}
+
+input{
+width:100%;
+padding:18px;
+border:none;
+outline:none;
+border-radius:15px;
+background:#111;
+color:white;
+font-size:16px;
+margin-top:15px;
+border:1px solid #333;
+}
+
+button{
+width:100%;
+padding:18px;
+border:none;
+border-radius:15px;
+background:linear-gradient(45deg,gold,orange);
+color:black;
+font-size:20px;
+font-weight:bold;
+margin-top:18px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.03);
+}
+
+.status{
+margin-top:25px;
+padding:20px;
+border-radius:15px;
+line-height:2;
+font-size:15px;
+}
+
+.active{
+background:rgba(0,255,0,0.1);
+border:2px solid lime;
+box-shadow:0 0 20px lime;
+}
+
+.invalid{
+background:rgba(255,0,0,0.1);
+border:2px solid red;
+box-shadow:0 0 20px red;
+text-align:center;
+}
+
+.btns{
+display:flex;
+gap:12px;
+margin-top:25px;
+flex-wrap:wrap;
+}
+
+.btn{
+flex:1;
+text-decoration:none;
+padding:18px;
+border-radius:15px;
+text-align:center;
+font-weight:bold;
+font-size:15px;
+transition:0.3s;
+}
+
+.tg{
+background:#0088cc;
+color:white;
+}
+
+.admin{
+background:crimson;
+color:white;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.footer{
+text-align:center;
+margin-top:30px;
+color:#ccc;
+font-size:14px;
+line-height:2;
+}
+
+.music{
+display:none;
+}
+
+@media(max-width:600px){
+
+.title{
+font-size:32px;
+}
+
+.box{
+padding:20px;
+}
+
+.btns{
+flex-direction:column;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop class="music">
+<source src="https://files.catbox.moe/q6m8ka.mp3" type="audio/mpeg">
+</audio>
+
+<div class="overlay">
+
+<div class="box">
+
+<img class="logo" src="https://i.imgur.com/Jm8XGQx.png">
+
+<div class="title">
+IOS SONU FF
+</div>
+
+<div class="subtitle">
+ULTIMATE VIP KEY ACTIVATION PROXY
+</div>
+
+<div class="ipbox">
+🌐 YOUR IP ADDRESS <br><br>
+{{ ip }}
+</div>
+
+<form method="POST">
+
+<input type="text" name="key" placeholder="ENTER YOUR PREMIUM KEY" required>
+
+<button type="submit">
+🔒 VERIFY & ACTIVATE
+</button>
+
+</form>
+
+{% if status %}
+
+{% if status.active %}
+
+<div class="status active">
+
+<h2>STATUS : KEY ACTIVE ✅</h2>
+
+<p><b>KEY :</b> {{ status.key }}</p>
+
+<p><b>ACTIVATED :</b> {{ status.activated }}</p>
+
+<p><b>EXPIRES :</b> {{ status.expires }}</p>
+
+<p><b>REMAINING :</b> {{ status.remaining }}</p>
+
+</div>
+
+{% else %}
+
+<div class="status invalid">
+
+<h2>INVALID OR EXPIRED KEY ❌</h2>
+
+</div>
+
+{% endif %}
+
+{% endif %}
+
+<div class="btns">
+
+<a class="btn tg" href="https://t.me/+3kZ0sxFfDZAwODM1">
+
+📢 JOIN TELEGRAM CHANNEL
+
+</a>
+
+<a class="btn admin" href="https://t.me/SONUSELLOR11">
+
+👤 CONTACT ADMIN
+
+</a>
+
+</div>
+
+<div class="footer">
+
+ADMIN : @SONUSELLOR11 <br>
+
+© IOS SONU FF VIP PROXY
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
