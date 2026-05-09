@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IOS SONU FF VIP PROXY</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -13,21 +14,19 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Rajdhani',sans-serif;
+font-family:'Orbitron',sans-serif;
 }
 
 body{
-background:url('https://i.postimg.cc/K8n0Q6gA/ff-dark-bg.jpg');
+background:url('https://wallpapercave.com/wp/wp11744574.jpg') no-repeat center center fixed;
 background-size:cover;
-background-position:center;
-background-attachment:fixed;
 min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
 padding:20px;
 overflow-x:hidden;
-color:white;
+position:relative;
 }
 
 body::before{
@@ -39,75 +38,94 @@ backdrop-filter:blur(2px);
 z-index:-1;
 }
 
-.panel{
+.container{
 width:100%;
-max-width:520px;
-background:rgba(10,10,10,0.92);
-border:1.5px solid #d4a017;
-border-radius:22px;
-padding:22px;
-box-shadow:0 0 25px rgba(212,160,23,0.4);
+max-width:720px;
+background:rgba(0,0,0,0.88);
+border:2px solid #d4a017;
+border-radius:25px;
+padding:25px;
+box-shadow:
+0 0 25px rgba(255,215,0,0.35),
+0 0 60px rgba(255,180,0,0.12);
+position:relative;
+overflow:hidden;
 }
 
-.banner{
+.logo{
 width:100%;
 border-radius:18px;
-margin-bottom:18px;
+margin-bottom:20px;
 border:1px solid rgba(255,215,0,0.35);
 }
 
-.heading{
+.title{
 text-align:center;
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
-.heading h1{
-font-size:38px;
+.title h1{
+font-size:48px;
+font-weight:900;
 color:#ffd54a;
-font-weight:700;
-letter-spacing:1px;
+text-shadow:
+0 0 10px rgba(255,215,0,0.7),
+0 0 25px rgba(255,215,0,0.3);
 }
 
-.heading p{
+.title p{
+margin-top:8px;
 font-size:15px;
-color:#d9d9d9;
-margin-top:5px;
+letter-spacing:2px;
+color:#e0e0e0;
 }
 
-.ipbox{
-background:#111;
+.box{
+background:#050505;
 border:1px solid rgba(255,215,0,0.35);
 border-radius:14px;
-padding:16px;
-margin-bottom:18px;
+padding:18px;
+margin-bottom:20px;
+color:white;
 text-align:center;
+line-height:1.9;
 font-size:15px;
-line-height:1.7;
+}
+
+.box span{
+color:#00ff6a;
+font-size:22px;
+font-weight:700;
 }
 
 input{
 width:100%;
-padding:17px;
+padding:18px;
 background:#0c0c0c;
 border:1px solid rgba(255,215,0,0.35);
 border-radius:12px;
-color:white;
 font-size:16px;
+color:white;
 outline:none;
-margin-bottom:18px;
+margin-bottom:20px;
+}
+
+input::placeholder{
+color:#888;
 }
 
 button{
 width:100%;
-padding:17px;
+padding:18px;
 border:none;
 border-radius:12px;
-background:linear-gradient(to bottom,#ffd54a,#d89b00);
+background:linear-gradient(to bottom,#ffd54a,#e0a100);
 color:black;
-font-size:22px;
-font-weight:700;
+font-size:24px;
+font-weight:900;
 cursor:pointer;
 transition:0.25s;
+box-shadow:0 0 20px rgba(255,215,0,0.25);
 }
 
 button:hover{
@@ -115,41 +133,38 @@ transform:scale(1.02);
 }
 
 .status{
-margin-top:22px;
+margin-top:25px;
+padding:18px;
+border-radius:15px;
+border:1px solid #00ff66;
+background:rgba(0,255,100,0.08);
+line-height:2;
+color:white;
+}
+
+.status h2{
+color:#00ff66;
+margin-bottom:10px;
+}
+
+.btns{
+display:flex;
+gap:15px;
+margin-top:25px;
+}
+
+.btn{
+flex:1;
 padding:18px;
 border-radius:14px;
-line-height:2;
-}
-
-.active{
-border:1px solid #18ff5f;
-background:rgba(0,255,100,0.08);
-}
-
-.invalid{
-border:1px solid red;
-background:rgba(255,0,0,0.08);
-text-align:center;
-}
-
-.buttons{
-display:flex;
-gap:12px;
-margin-top:22px;
-}
-
-.linkbtn{
-flex:1;
-padding:15px;
 text-decoration:none;
 text-align:center;
-border-radius:12px;
 font-size:15px;
 font-weight:700;
 transition:0.25s;
 }
 
-.telegram{
+.tg{
 background:#0088cc;
 color:white;
 }
@@ -159,25 +174,25 @@ background:#c1121f;
 color:white;
 }
 
-.linkbtn:hover{
+.btn:hover{
 transform:translateY(-2px);
 }
 
 .footer{
-margin-top:24px;
+margin-top:25px;
 text-align:center;
-font-size:14px;
-color:#cfcfcf;
 line-height:2;
+font-size:14px;
+color:#ddd;
 }
 
-@media(max-width:600px){
+@media(max-width:700px){
 
-.heading h1{
-font-size:31px;
+.title h1{
+font-size:36px;
 }
 
-.buttons{
+.btns{
 flex-direction:column;
 }
 
@@ -196,24 +211,24 @@ flex-direction:column;
 
 window.onload = () => {
 
-let voices = speechSynthesis.getVoices();
-
 let msg = new SpeechSynthesisUtterance(
-"Welcome to IOS Sonu FF VIP Proxy. Premium key activation system is online."
+"Welcome to IOS Sonu FF VIP Proxy"
 );
 
-msg.rate = 0.93;
-msg.pitch = 1;
+msg.rate = 0.92;
+msg.pitch = 1.1;
 msg.volume = 1;
 
-for(let v of voices){
+let voices = speechSynthesis.getVoices();
+
+for(let voice of voices){
 
 if(
-v.name.includes("Samantha") ||
-v.name.includes("Female") ||
-v.name.includes("Google UK English Female")
+voice.name.includes("Female") ||
+voice.name.includes("Samantha") ||
+voice.name.includes("Google UK English Female")
 ){
-msg.voice = v;
+msg.voice = voice;
 break;
 }
 
@@ -225,11 +240,11 @@ speechSynthesis.speak(msg);
 
 </script>
 
-<div class="panel">
+<div class="container">
 
-<img class="banner" src="https://i.postimg.cc/8z0Yw0Qf/ios-sonu-banner.jpg">
+<img class="logo" src="https://i.postimg.cc/8z0Yw0Qf/ios-sonu-banner.jpg">
 
-<div class="heading">
+<div class="title">
 
 <h1>IOS SONU FF</h1>
 
@@ -237,11 +252,11 @@ speechSynthesis.speak(msg);
 
 </div>
 
-<div class="ipbox">
+<div class="box">
 
 🌐 YOUR IP ADDRESS <br><br>
 
-{{ ip }}
+<span>{{ ip }}</span>
 
 </div>
 
@@ -259,7 +274,7 @@ speechSynthesis.speak(msg);
 
 {% if status.active %}
 
-<div class="status active">
+<div class="status">
 
 <h2>STATUS : KEY ACTIVE ✅</h2>
 
@@ -273,25 +288,17 @@ speechSynthesis.speak(msg);
 
 </div>
 
-{% else %}
-
-<div class="status invalid">
-
-<h2>INVALID OR EXPIRED KEY ❌</h2>
-
-</div>
-
 {% endif %}
 
 {% endif %}
 
-<div class="buttons">
+<div class="btns">
 
-<a class="linkbtn telegram" href="https://t.me/+3kZ0sxFfDZAwODM1">
+<a class="btn tg" href="https://t.me/+3kZ0sxFfDZAwODM1">
 📢 JOIN TELEGRAM CHANNEL
 </a>
 
-<a class="linkbtn admin" href="https://t.me/SONUSELLOR11">
+<a class="btn admin" href="https://t.me/SONUSELLOR11">
 👤 CONTACT ADMIN
 </a>
 
