@@ -53,7 +53,7 @@ from{
 box-shadow:0 0 20px gold;
 }
 to{
-box-shadow:0 0 55px orange;
+box-shadow:0 0 60px orange;
 }
 }
 
@@ -206,6 +206,39 @@ flex-direction:column;
 <audio autoplay loop>
 <source src="https://files.catbox.moe/q6m8ka.mp3" type="audio/mpeg">
 </audio>
+
+<script>
+
+window.onload = function(){
+
+let voices = speechSynthesis.getVoices();
+
+let msg = new SpeechSynthesisUtterance(
+"Welcome to IOS SONU FF VIP Proxy. Premium key activation system is online."
+);
+
+msg.rate = 0.92;
+msg.pitch = 1;
+msg.volume = 1;
+
+for(let i=0;i<voices.length;i++){
+
+if(
+voices[i].name.includes("Female") ||
+voices[i].name.includes("Samantha") ||
+voices[i].name.includes("Google UK English Female")
+){
+msg.voice = voices[i];
+break;
+}
+
+}
+
+speechSynthesis.speak(msg);
+
+}
+
+</script>
 
 <div class="overlay">
 
