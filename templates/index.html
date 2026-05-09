@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>IOS SONU FF VIP PROXY</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,77 +13,73 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Orbitron',sans-serif;
+font-family:'Rajdhani',sans-serif;
 }
 
 body{
-background:url('https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1200&auto=format&fit=crop');
+background:url('https://i.postimg.cc/K8n0Q6gA/ff-dark-bg.jpg');
 background-size:cover;
 background-position:center;
 background-attachment:fixed;
-color:white;
 min-height:100vh;
-overflow-x:hidden;
-}
-
-.overlay{
-background:rgba(0,0,0,0.78);
-min-height:100vh;
-padding:20px;
 display:flex;
 justify-content:center;
 align-items:center;
+padding:20px;
+overflow-x:hidden;
+color:white;
 }
 
-.box{
+body::before{
+content:'';
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.72);
+backdrop-filter:blur(2px);
+z-index:-1;
+}
+
+.panel{
 width:100%;
-max-width:500px;
-background:rgba(0,0,0,0.82);
-border:2px solid gold;
-border-radius:25px;
-padding:25px;
-box-shadow:0 0 40px gold;
-backdrop-filter:blur(10px);
-animation:glow 2s infinite alternate;
+max-width:520px;
+background:rgba(10,10,10,0.92);
+border:1.5px solid #d4a017;
+border-radius:22px;
+padding:22px;
+box-shadow:0 0 25px rgba(212,160,23,0.4);
 }
 
-@keyframes glow{
-from{
-box-shadow:0 0 20px gold;
-}
-to{
-box-shadow:0 0 60px orange;
-}
-}
-
-.logo{
+.banner{
 width:100%;
-border-radius:20px;
+border-radius:18px;
+margin-bottom:18px;
+border:1px solid rgba(255,215,0,0.35);
+}
+
+.heading{
+text-align:center;
 margin-bottom:20px;
 }
 
-.title{
-text-align:center;
-font-size:40px;
-font-weight:900;
-color:gold;
-text-shadow:0 0 20px gold;
-margin-bottom:10px;
+.heading h1{
+font-size:38px;
+color:#ffd54a;
+font-weight:700;
+letter-spacing:1px;
 }
 
-.subtitle{
-text-align:center;
-color:#ddd;
-margin-bottom:25px;
-font-size:14px;
+.heading p{
+font-size:15px;
+color:#d9d9d9;
+margin-top:5px;
 }
 
 .ipbox{
-background:#0d0d0d;
-border:1px solid gold;
-padding:18px;
-border-radius:15px;
-margin-bottom:20px;
+background:#111;
+border:1px solid rgba(255,215,0,0.35);
+border-radius:14px;
+padding:16px;
+margin-bottom:18px;
 text-align:center;
 font-size:15px;
 line-height:1.7;
@@ -92,107 +87,97 @@ line-height:1.7;
 
 input{
 width:100%;
-padding:18px;
-border:none;
-outline:none;
-border-radius:15px;
-background:#111;
+padding:17px;
+background:#0c0c0c;
+border:1px solid rgba(255,215,0,0.35);
+border-radius:12px;
 color:white;
 font-size:16px;
-margin-top:15px;
-border:1px solid #333;
+outline:none;
+margin-bottom:18px;
 }
 
 button{
 width:100%;
-padding:18px;
+padding:17px;
 border:none;
-border-radius:15px;
-background:linear-gradient(45deg,gold,orange);
+border-radius:12px;
+background:linear-gradient(to bottom,#ffd54a,#d89b00);
 color:black;
-font-size:20px;
-font-weight:bold;
-margin-top:18px;
+font-size:22px;
+font-weight:700;
 cursor:pointer;
-transition:0.3s;
+transition:0.25s;
 }
 
 button:hover{
-transform:scale(1.03);
+transform:scale(1.02);
 }
 
 .status{
-margin-top:25px;
-padding:20px;
-border-radius:15px;
+margin-top:22px;
+padding:18px;
+border-radius:14px;
 line-height:2;
-font-size:15px;
 }
 
 .active{
-background:rgba(0,255,0,0.1);
-border:2px solid lime;
-box-shadow:0 0 20px lime;
+border:1px solid #18ff5f;
+background:rgba(0,255,100,0.08);
 }
 
 .invalid{
-background:rgba(255,0,0,0.1);
-border:2px solid red;
-box-shadow:0 0 20px red;
+border:1px solid red;
+background:rgba(255,0,0,0.08);
 text-align:center;
 }
 
-.btns{
+.buttons{
 display:flex;
 gap:12px;
-margin-top:25px;
-flex-wrap:wrap;
+margin-top:22px;
 }
 
-.btn{
+.linkbtn{
 flex:1;
+padding:15px;
 text-decoration:none;
-padding:18px;
-border-radius:15px;
 text-align:center;
-font-weight:bold;
+border-radius:12px;
 font-size:15px;
-transition:0.3s;
+font-weight:700;
+transition:0.25s;
 }
 
-.tg{
+.telegram{
 background:#0088cc;
 color:white;
 }
 
 .admin{
-background:crimson;
+background:#c1121f;
 color:white;
 }
 
-.btn:hover{
-transform:translateY(-3px);
+.linkbtn:hover{
+transform:translateY(-2px);
 }
 
 .footer{
+margin-top:24px;
 text-align:center;
-margin-top:30px;
-color:#ccc;
 font-size:14px;
+color:#cfcfcf;
 line-height:2;
 }
 
 @media(max-width:600px){
 
-.title{
-font-size:30px;
+.heading h1{
+font-size:31px;
 }
 
-.box{
-padding:20px;
-}
-
-.btns{
+.buttons{
 flex-direction:column;
 }
 
@@ -209,26 +194,26 @@ flex-direction:column;
 
 <script>
 
-window.onload = function(){
+window.onload = () => {
 
 let voices = speechSynthesis.getVoices();
 
 let msg = new SpeechSynthesisUtterance(
-"Welcome to IOS SONU FF VIP Proxy. Premium key activation system is online."
+"Welcome to IOS Sonu FF VIP Proxy. Premium key activation system is online."
 );
 
-msg.rate = 0.92;
+msg.rate = 0.93;
 msg.pitch = 1;
 msg.volume = 1;
 
-for(let i=0;i<voices.length;i++){
+for(let v of voices){
 
 if(
-voices[i].name.includes("Female") ||
-voices[i].name.includes("Samantha") ||
-voices[i].name.includes("Google UK English Female")
+v.name.includes("Samantha") ||
+v.name.includes("Female") ||
+v.name.includes("Google UK English Female")
 ){
-msg.voice = voices[i];
+msg.voice = v;
 break;
 }
 
@@ -236,27 +221,28 @@ break;
 
 speechSynthesis.speak(msg);
 
-}
+};
 
 </script>
 
-<div class="overlay">
+<div class="panel">
 
-<div class="box">
+<img class="banner" src="https://i.postimg.cc/8z0Yw0Qf/ios-sonu-banner.jpg">
 
-<img class="logo" src="https://i.imgur.com/Jm8XGQx.png">
+<div class="heading">
 
-<div class="title">
-IOS SONU FF
-</div>
+<h1>IOS SONU FF</h1>
 
-<div class="subtitle">
-ULTIMATE VIP KEY ACTIVATION PROXY
+<p>ULTIMATE VIP KEY ACTIVATION PROXY</p>
+
 </div>
 
 <div class="ipbox">
+
 🌐 YOUR IP ADDRESS <br><br>
+
 {{ ip }}
+
 </div>
 
 <form method="POST">
@@ -299,13 +285,13 @@ ULTIMATE VIP KEY ACTIVATION PROXY
 
 {% endif %}
 
-<div class="btns">
+<div class="buttons">
 
-<a class="btn tg" href="https://t.me/+3kZ0sxFfDZAwODM1">
+<a class="linkbtn telegram" href="https://t.me/+3kZ0sxFfDZAwODM1">
 📢 JOIN TELEGRAM CHANNEL
 </a>
 
-<a class="btn admin" href="https://t.me/SONUSELLOR11">
+<a class="linkbtn admin" href="https://t.me/SONUSELLOR11">
 👤 CONTACT ADMIN
 </a>
 
@@ -316,8 +302,6 @@ ULTIMATE VIP KEY ACTIVATION PROXY
 ADMIN : @SONUSELLOR11 <br>
 
 © IOS SONU FF VIP PROXY
-
-</div>
 
 </div>
 
