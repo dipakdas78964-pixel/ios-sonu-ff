@@ -1,12 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>IOS SONU FF VIP PROXY</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -18,184 +18,199 @@ font-family:'Orbitron',sans-serif;
 }
 
 body{
-background:url('https://wallpapercave.com/wp/wp11744574.jpg') no-repeat center center fixed;
+background:
+linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.9)),
+url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1971&auto=format&fit=crop');
 background-size:cover;
+background-position:center;
+background-attachment:fixed;
 min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
 padding:20px;
 overflow-x:hidden;
-position:relative;
-}
-
-body::before{
-content:'';
-position:fixed;
-inset:0;
-background:rgba(0,0,0,0.72);
-backdrop-filter:blur(2px);
-z-index:-1;
 }
 
 .container{
 width:100%;
-max-width:720px;
-background:rgba(0,0,0,0.88);
-border:2px solid #d4a017;
-border-radius:25px;
+max-width:520px;
+background:rgba(0,0,0,.82);
+border:2px solid #ffcc00;
+border-radius:30px;
 padding:25px;
 box-shadow:
-0 0 25px rgba(255,215,0,0.35),
-0 0 60px rgba(255,180,0,0.12);
-position:relative;
-overflow:hidden;
+0 0 25px #ffcc00,
+0 0 60px rgba(255,204,0,.4);
+backdrop-filter:blur(12px);
+animation:glow 3s infinite alternate;
 }
 
-.logo{
+@keyframes glow{
+from{
+box-shadow:
+0 0 20px #ffcc00,
+0 0 40px rgba(255,204,0,.3);
+}
+to{
+box-shadow:
+0 0 35px #ffcc00,
+0 0 70px rgba(255,204,0,.6);
+}
+}
+
+.banner{
 width:100%;
-border-radius:18px;
+border-radius:20px;
 margin-bottom:20px;
-border:1px solid rgba(255,215,0,0.35);
+border:2px solid #ffcc00;
+box-shadow:0 0 25px rgba(255,204,0,.5);
 }
 
 .title{
 text-align:center;
-margin-bottom:25px;
-}
-
-.title h1{
-font-size:48px;
+font-size:42px;
 font-weight:900;
-color:#ffd54a;
-text-shadow:
-0 0 10px rgba(255,215,0,0.7),
-0 0 25px rgba(255,215,0,0.3);
+color:#ffcc00;
+text-shadow:0 0 20px #ffcc00;
+margin-top:10px;
 }
 
-.title p{
-margin-top:8px;
-font-size:15px;
-letter-spacing:2px;
-color:#e0e0e0;
-}
-
-.box{
-background:#050505;
-border:1px solid rgba(255,215,0,0.35);
-border-radius:14px;
-padding:18px;
-margin-bottom:20px;
-color:white;
+.subtitle{
 text-align:center;
-line-height:1.9;
-font-size:15px;
+font-size:17px;
+color:#fff;
+margin-top:8px;
+margin-bottom:30px;
+line-height:1.5;
 }
 
-.box span{
-color:#00ff6a;
+.ipbox{
+border:2px solid rgba(255,204,0,.5);
+border-radius:20px;
+padding:25px;
+text-align:center;
+margin-bottom:25px;
+background:rgba(255,255,255,.03);
+}
+
+.ipbox h3{
+color:#00bfff;
+font-size:17px;
+margin-bottom:15px;
+}
+
+.ip{
+color:#00ff66;
 font-size:22px;
-font-weight:700;
+font-weight:bold;
+line-height:1.8;
+text-shadow:0 0 10px #00ff66;
 }
 
-input{
+.input{
 width:100%;
-padding:18px;
-background:#0c0c0c;
-border:1px solid rgba(255,215,0,0.35);
-border-radius:12px;
-font-size:16px;
+padding:24px;
+background:#050505;
+border:2px solid rgba(255,204,0,.4);
+border-radius:18px;
 color:white;
+font-size:20px;
+margin-bottom:25px;
 outline:none;
-margin-bottom:20px;
 }
 
-input::placeholder{
-color:#888;
+.input::placeholder{
+color:#777;
 }
 
-button{
+.btn{
 width:100%;
-padding:18px;
+padding:22px;
 border:none;
-border-radius:12px;
-background:linear-gradient(to bottom,#ffd54a,#e0a100);
-color:black;
-font-size:24px;
+border-radius:20px;
+font-size:22px;
 font-weight:900;
 cursor:pointer;
-transition:0.25s;
-box-shadow:0 0 20px rgba(255,215,0,0.25);
+transition:.3s;
+margin-bottom:22px;
 }
 
-button:hover{
-transform:scale(1.02);
+.verify{
+background:linear-gradient(45deg,#ffd000,#ffb300);
+color:#000;
+box-shadow:0 0 25px rgba(255,208,0,.6);
+}
+
+.verify:hover{
+transform:scale(1.03);
+}
+
+.telegram{
+display:block;
+text-align:center;
+text-decoration:none;
+background:#009dff;
+color:#fff;
+padding:22px;
+border-radius:20px;
+font-size:20px;
+font-weight:bold;
+margin-bottom:20px;
+}
+
+.admin{
+display:block;
+text-align:center;
+text-decoration:none;
+background:#ff0048;
+color:#fff;
+padding:22px;
+border-radius:20px;
+font-size:20px;
+font-weight:bold;
+}
+
+.footer{
+margin-top:35px;
+text-align:center;
+color:#ccc;
+font-size:18px;
+line-height:2;
 }
 
 .status{
-margin-top:25px;
-padding:18px;
-border-radius:15px;
-border:1px solid #00ff66;
-background:rgba(0,255,100,0.08);
-line-height:2;
-color:white;
+margin-top:30px;
+border:2px solid #00ff66;
+border-radius:20px;
+padding:22px;
+background:rgba(0,255,100,.05);
+display:none;
+animation:fade .5s ease;
 }
 
 .status h2{
 color:#00ff66;
-margin-bottom:10px;
-}
-
-.btns{
-display:flex;
-gap:15px;
-margin-top:25px;
-}
-
-.btn{
-flex:1;
-padding:18px;
-border-radius:14px;
-text-decoration:none;
+margin-bottom:15px;
+font-size:30px;
 text-align:center;
-font-size:15px;
-font-weight:700;
-transition:0.25s;
 }
 
-.tg{
-background:#0088cc;
-color:white;
+.status p{
+color:#fff;
+margin:10px 0;
+font-size:16px;
 }
 
-.admin{
-background:#c1121f;
-color:white;
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
 }
-
-.btn:hover{
-transform:translateY(-2px);
+to{
+opacity:1;
+transform:translateY(0);
 }
-
-.footer{
-margin-top:25px;
-text-align:center;
-line-height:2;
-font-size:14px;
-color:#ddd;
-}
-
-@media(max-width:700px){
-
-.title h1{
-font-size:36px;
-}
-
-.btns{
-flex-direction:column;
-}
-
 }
 
 </style>
@@ -203,116 +218,88 @@ flex-direction:column;
 
 <body>
 
-<audio autoplay loop>
-<source src="https://files.catbox.moe/q6m8ka.mp3" type="audio/mpeg">
+<audio id="voice">
+<source src="https://files.catbox.moe/0omwqy.mp3" type="audio/mpeg">
 </audio>
-
-<script>
-
-window.onload = () => {
-
-let msg = new SpeechSynthesisUtterance(
-"Welcome to IOS Sonu FF VIP Proxy"
-);
-
-msg.rate = 0.92;
-msg.pitch = 1.1;
-msg.volume = 1;
-
-let voices = speechSynthesis.getVoices();
-
-for(let voice of voices){
-
-if(
-voice.name.includes("Female") ||
-voice.name.includes("Samantha") ||
-voice.name.includes("Google UK English Female")
-){
-msg.voice = voice;
-break;
-}
-
-}
-
-speechSynthesis.speak(msg);
-
-};
-
-</script>
 
 <div class="container">
 
-<img class="logo" src="https://i.postimg.cc/8z0Yw0Qf/ios-sonu-banner.jpg">
+<img class="banner" src="https://i.ibb.co/Fm8L7wN/ios-sonu-ff-cinematic.jpg">
 
-<div class="title">
+<h1 class="title">IOS SONU FF</h1>
 
-<h1>IOS SONU FF</h1>
+<p class="subtitle">
+WELCOME TO<br>
+ULTIMATE VIP KEY ACTIVATION PROXY
+</p>
 
-<p>ULTIMATE VIP KEY ACTIVATION PROXY</p>
+<div class="ipbox">
+<h3>🌐 YOUR IP ADDRESS</h3>
 
+<div class="ip">
+106.192.80.71,<br>
+172.68.175.90,<br>
+10.31.43.131
+</div>
 </div>
 
-<div class="box">
+<input class="input" id="key" type="text" placeholder="ENTER YOUR PREMIUM KEY">
 
-🌐 YOUR IP ADDRESS <br><br>
-
-<span>{{ ip }}</span>
-
-</div>
-
-<form method="POST">
-
-<input type="text" name="key" placeholder="ENTER YOUR PREMIUM KEY" required>
-
-<button type="submit">
-🔒 VERIFY & ACTIVATE
+<button class="btn verify" onclick="activate()">
+🔐 VERIFY & ACTIVATE
 </button>
 
-</form>
+<div class="status" id="status">
+<h2>STATUS: KEY ACTIVE ✅</h2>
 
-{% if status %}
+<p><b>KEY:</b> IOS-SONU-FF-X7A92K</p>
 
-{% if status.active %}
+<p><b>ACTIVATED:</b> VIP ACCESS GRANTED</p>
 
-<div class="status">
+<p><b>SERVER:</b> PREMIUM PRIVATE SERVER</p>
 
-<h2>STATUS : KEY ACTIVE ✅</h2>
-
-<p><b>KEY :</b> {{ status.key }}</p>
-
-<p><b>ACTIVATED :</b> {{ status.activated }}</p>
-
-<p><b>EXPIRES :</b> {{ status.expires }}</p>
-
-<p><b>REMAINING :</b> {{ status.remaining }}</p>
-
+<p><b>REMAINING:</b> 6 DAYS 23 HOURS</p>
 </div>
 
-{% endif %}
-
-{% endif %}
-
-<div class="btns">
-
-<a class="btn tg" href="https://t.me/+3kZ0sxFfDZAwODM1">
+<a class="telegram" href="https://t.me/+3kZ0sxFfDZAwODM1">
 📢 JOIN TELEGRAM CHANNEL
 </a>
 
-<a class="btn admin" href="https://t.me/SONUSELLOR11">
+<a class="admin" href="https://t.me/SONUSELLOR11">
 👤 CONTACT ADMIN
 </a>
 
-</div>
-
 <div class="footer">
-
-ADMIN : @SONUSELLOR11 <br>
-
+ADMIN : @SONUSELLOR11
+<br>
 © IOS SONU FF VIP PROXY
-
 </div>
 
 </div>
+
+<script>
+
+function activate(){
+
+let key=document.getElementById("key").value;
+
+if(
+key==="IOS-SONU-FF-X7A92K"
+){
+
+document.getElementById("status").style.display="block";
+
+document.getElementById("voice").play();
+
+}else{
+
+alert("INVALID PREMIUM KEY");
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
